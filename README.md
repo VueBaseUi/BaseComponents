@@ -1,4 +1,4 @@
-# base-components
+# Base Components
 
 > A Vue Base Components
 
