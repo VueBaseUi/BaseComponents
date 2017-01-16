@@ -1,6 +1,7 @@
 # base-components
 
 > A Vue Base Components
+> 在保留组件基本功能的情况下，尽可能的提供CSS样式方面的可扩展性
 
 ## Build Setup
 
