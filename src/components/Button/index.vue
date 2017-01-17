@@ -31,32 +31,7 @@ export default {
 </script>
 
 <style lang="scss">
-.base-btn {
-    border-width: 1px;
-    border-style: solid;
-    font-size: 16px;
-    line-height: 1;
-    cursor: pointer;
-
-    &[disabled] {
-        cursor: not-allowed;
-    }
-    &:hover {
-        //
-    }
-    &:active {
-        //
-    }
-    &:focus {
-        outline: 0;
-    }
-}
-
-.base-btnIcon-left {
-    margin-right: 10px;
-}
-
-.base-btnIcon-right {
-    margin-left: 10px;
-}
+//
+@import "../../styles/button.scss";
+//
 </style>

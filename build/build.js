@@ -18,22 +18,21 @@ console.log(
 var spinner = ora('building for production...')
 spinner.start()
 
-var assetsPath = path.join(config.build.assetsRoot)
-rm('-rf', assetsPath)
-// mkdir('-p', assetsPath)
-cp('-R', 'src/components/*', assetsPath)
-cp('-R', 'src/style/*', assetsPath)
+var assetsRoot = path.join(config.build.assetsRoot)
+var assetsPath = path.join(config.build.assetsRoot, config.build.assetsSubDirectory)
 
-spinner.stop()
+rm('-rf', assetsRoot)
+mkdir('-p', assetsPath)
+cp('-R', 'static/*', assetsPath)
 
-// webpack(webpackConfig, function(err, stats) {
-//     spinner.stop()
-//     if (err) throw err
-//     process.stdout.write(stats.toString({
-//         colors: true,
-//         modules: false,
-//         children: false,
-//         chunks: false,
-//         chunkModules: false
-//     }) + '\n')
-// })
+webpack(webpackConfig, function(err, stats) {
+    spinner.stop()
+    if (err) throw err
+    process.stdout.write(stats.toString({
+        colors: true,
+        modules: false,
+        children: false,
+        chunks: false,
+        chunkModules: false
+    }) + '\n')
+})

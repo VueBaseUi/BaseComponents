@@ -2,17 +2,22 @@
 <div id="app">
     <img src="./assets/logo.png">
     <div>
+        <base-button>123</base-button>
     </div>
 </div>
 </template>
 
 <script>
+import BaseButton from '../components/Button';
+
 export default {
     name: 'app',
     data() {
         return {};
     },
-    components: {}
+    components: {
+        BaseButton
+    }
 };
 </script>
 

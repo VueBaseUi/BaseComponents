@@ -10,7 +10,22 @@ var env = process.env.NODE_ENV === 'testing' ?
     require('../config/test.env') :
     config.build.env
 
+const components = require('../components.json')
+
+/**
+ * 根据项目路径自动生成 webpack entry 对象
+ * @return {Object} webpack entry 对象
+ */
+const getEntry = (list) => {
+    const entry = {};
+    Object.keys(list).forEach(key => {
+        entry[key] = list[key];
+    });
+    return entry;
+};
+
 var webpackConfig = merge(baseWebpackConfig, {
+    entry: getEntry(components),
     module: {
         loaders: utils.styleLoaders({
             sourceMap: config.build.productionSourceMap,
