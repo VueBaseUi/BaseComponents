@@ -10,22 +10,10 @@ var env = process.env.NODE_ENV === 'testing' ?
     require('../config/test.env') :
     config.build.env
 
-const components = require('../components.json')
-
-/**
- * 根据项目路径自动生成 webpack entry 对象
- * @return {Object} webpack entry 对象
- */
-const getEntry = (list) => {
-    const entry = {};
-    Object.keys(list).forEach(key => {
-        entry[key] = list[key];
-    });
-    return entry;
-};
-
 var webpackConfig = merge(baseWebpackConfig, {
-    entry: getEntry(components),
+    entry: {
+        index: config.build.index
+    },
     module: {
         loaders: utils.styleLoaders({
             sourceMap: config.build.productionSourceMap,
@@ -35,8 +23,9 @@ var webpackConfig = merge(baseWebpackConfig, {
     devtool: config.build.productionSourceMap ? '#source-map' : false,
     output: {
         path: config.build.assetsRoot,
-        filename: utils.assetsPath('js/[name].[chunkhash].js'),
-        chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
+        filename: utils.assetsPath('[name].js'),
+        chunkFilename: utils.assetsPath('[id].[chunkhash].js'),
+        libraryTarget: 'umd'
     },
     vue: {
         loaders: utils.cssLoaders({
@@ -56,47 +45,8 @@ var webpackConfig = merge(baseWebpackConfig, {
         }),
         new webpack.optimize.OccurrenceOrderPlugin(),
         // extract css into its own file
-        new ExtractTextPlugin(utils.assetsPath('css/[name].[contenthash].css')),
-
-        // split vendor js into its own file
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            minChunks: function(module, count) {
-                // any required modules inside node_modules are extracted to vendor
-                return (
-                    module.resource &&
-                    /\.js$/.test(module.resource) &&
-                    module.resource.indexOf(
-                        path.join(__dirname, '../node_modules')
-                    ) === 0
-                )
-            }
-        }),
-        // extract webpack runtime and module manifest to its own file in order to
-        // prevent vendor hash from being updated whenever app bundle is updated
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'manifest',
-            chunks: ['vendor']
-        })
+        new ExtractTextPlugin(utils.assetsPath('css/[name].css'))
     ]
 })
-
-if (config.build.productionGzip) {
-    var CompressionWebpackPlugin = require('compression-webpack-plugin')
-
-    webpackConfig.plugins.push(
-        new CompressionWebpackPlugin({
-            asset: '[path].gz[query]',
-            algorithm: 'gzip',
-            test: new RegExp(
-                '\\.(' +
-                config.build.productionGzipExtensions.join('|') +
-                ')$'
-            ),
-            threshold: 10240,
-            minRatio: 0.8
-        })
-    )
-}
 
 module.exports = webpackConfig

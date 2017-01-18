@@ -6,10 +6,21 @@ var baseWebpackConfig = require('./webpack.base.conf')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var FriendlyErrors = require('friendly-errors-webpack-plugin')
 
-module.exports = merge(baseWebpackConfig, {
-    entry: {
+// add hot-reload related code to entry chunks
+function hotReload() {
+    const entry = {
         app: './src/views/main.js'
-    },
+    };
+
+    Object.keys(entry).forEach(function(name) {
+        entry[name] = ['./build/dev-client'].concat(entry[name])
+    })
+
+    return entry;
+}
+
+module.exports = merge(baseWebpackConfig, {
+    entry: hotReload(),
     module: {
         loaders: utils.styleLoaders({
             sourceMap: config.dev.cssSourceMap

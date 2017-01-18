@@ -2,21 +2,21 @@
 <div id="app">
     <img src="./assets/logo.png">
     <div>
-        <base-button>123</base-button>
+        <vue-button data-role="btn">123</vue-button>
     </div>
 </div>
 </template>
 
 <script>
-import BaseButton from '../components/Button';
-
 export default {
     name: 'app',
     data() {
         return {};
     },
-    components: {
-        BaseButton
+    methods: {
+        action(e) {
+            console.log(e);
+        }
     }
 };
 </script>
