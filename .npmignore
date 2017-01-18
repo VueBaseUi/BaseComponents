@@ -18,6 +18,6 @@ npm-debug.log
 build/
 config/
 node_modules/
-src/views
+src/
 static/
 test/
