@@ -1,18 +1,23 @@
 .DS_Store
 
 .git
-.gitignore
 
 .babelrc
 .csscomb.json
 .editorconfig
-.eslintrc.js
 .eslintignore
+.eslintrc.js
+.gitignore
+.npmignore
+.travis.yml
 
-npm-debug.log
+components.json
 index.html
+npm-debug.log
 
-static/
 build/
 config/
 node_modules/
+src/views
+static/
+test/
