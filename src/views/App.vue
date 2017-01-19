@@ -2,7 +2,7 @@
 <div id="app">
     <img src="./assets/logo.png">
     <div>
-        <vue-button data-role="btn">123</vue-button>
+        <vue-button :loading="true" :disabled="true" data-role="btn" :type="'success'" native="reset" @click.native="action($event)">123</vue-button>
     </div>
 </div>
 </template>
@@ -15,7 +15,7 @@ export default {
     },
     methods: {
         action(e) {
-            console.log(e);
+            console.log(e.target);
         }
     }
 };

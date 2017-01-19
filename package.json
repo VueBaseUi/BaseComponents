@@ -1,11 +1,11 @@
 {
-    "name": "vbc",
+    "name": "vue-skeleton",
     "version": "0.0.1",
     "description": "A Vue Base Components",
     "author": "zhaozhe <zhaozhe0831@vip.qq.com>",
     "license": "MIT",
-    "main": "dist/main/index.js",
-    "style": "dist/main/css/index.css",
+    "main": "dist/index.js",
+    "style": "dist/css/index.css",
     "keywords": [
         "plugin",
         "frontend",
@@ -16,7 +16,10 @@
         "vue plugin"
     ],
     "files": [
-        "src"
+        "src/components",
+        "src/styles",
+        "dist/main",
+        "dist/styles"
     ],
     "scripts": {
         "dev": "node build/dev-server.js",

@@ -6,7 +6,7 @@ module.exports = {
         env: require('./prod.env'),
         index: path.resolve(__dirname, '../src/components/index.js'),
         assetsRoot: path.resolve(__dirname, '../dist'),
-        assetsSubDirectory: 'main',
+        assetsSubDirectory: '/',
         assetsPublicPath: '/',
         productionSourceMap: false,
     },
