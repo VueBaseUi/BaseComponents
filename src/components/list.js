@@ -1,7 +1,9 @@
-import Button from './Button';
+import Button from './general/Button';
+import ButtonGroup from './general/ButtonGroup';
 
 const components = {
-    Button
+    Button,
+    ButtonGroup
 };
 
 export default components;

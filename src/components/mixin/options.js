@@ -5,8 +5,8 @@
 export default {
     data() {
         return {
-            classPR: this.$Prefix.class, // 样式前缀
-            iconPR: this.$Prefix.icon // 图标前缀
+            classPR: this.$Prefix ? this.$Prefix.class : 'base', // 样式前缀
+            iconPR: this.$Prefix ? this.$Prefix.icon : 'fa' // 图标前缀
         };
     }
 };
