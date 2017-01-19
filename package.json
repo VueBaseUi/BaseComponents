@@ -30,12 +30,12 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "bugs": {
-    "url": "https://github.com/VueBaseUi/BaseComponents/issues",
+    "url": "https://github.com/VueBaseUi/vue-skeleton/issues",
     "email": "zhaozhe0831@vip.qq.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/VueBaseUi/BaseComponents"
+    "url": "https://github.com/VueBaseUi/vue-skeleton"
   },
   "dependencies": {},
   "devDependencies": {
