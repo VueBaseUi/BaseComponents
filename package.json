@@ -1,9 +1,26 @@
 {
-  "name": "base-components",
-  "version": "1.0.0",
+  "name": "vue-skeleton",
+  "version": "0.0.2",
   "description": "A Vue Base Components",
   "author": "zhaozhe <zhaozhe0831@vip.qq.com>",
-  "private": true,
+  "license": "MIT",
+  "main": "dist/index.js",
+  "style": "dist/css/index.css",
+  "keywords": [
+    "plugin",
+    "frontend",
+    "components",
+    "vue",
+    "vue ui",
+    "vue components",
+    "vue plugin"
+  ],
+  "files": [
+    "src/components",
+    "src/styles",
+    "dist/main",
+    "dist/styles"
+  ],
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
@@ -12,9 +29,15 @@
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
-  "dependencies": {
-    "vue": "^2.1.0"
+  "bugs": {
+    "url": "https://github.com/VueBaseUi/vue-skeleton/issues",
+    "email": "zhaozhe0831@vip.qq.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VueBaseUi/vue-skeleton"
+  },
+  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^6.4.0",
     "babel-core": "^6.0.0",
@@ -44,6 +67,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "friendly-errors-webpack-plugin": "^1.1.2",
+    "font-awesome": "^4.7.0",
     "function-bind": "^1.0.2",
     "html-webpack-plugin": "^2.8.1",
     "http-proxy-middleware": "^0.17.2",
@@ -71,6 +95,7 @@
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
     "url-loader": "^0.5.7",
+    "vue": "^2.1.0",
     "vue-loader": "^10.0.0",
     "vue-style-loader": "^1.0.0",
     "vue-template-compiler": "^2.1.0",

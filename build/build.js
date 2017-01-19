@@ -18,10 +18,13 @@ console.log(
 var spinner = ora('building for production...')
 spinner.start()
 
+var assetsRoot = path.join(config.build.assetsRoot)
 var assetsPath = path.join(config.build.assetsRoot, config.build.assetsSubDirectory)
-rm('-rf', assetsPath)
+
+rm('-rf', assetsRoot)
 mkdir('-p', assetsPath)
-cp('-R', 'static/*', assetsPath)
+cp('-R', 'src/styles', assetsRoot)
+
 
 webpack(webpackConfig, function(err, stats) {
     spinner.stop()
