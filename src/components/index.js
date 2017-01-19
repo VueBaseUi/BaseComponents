@@ -1,4 +1,5 @@
 import components from './list';
+import '../styles/index.scss';
 
 const version = '0.0.1';
 
@@ -16,12 +17,13 @@ const install = (Vue, opts) => {
         Vue.component(`${options.prefix}${key}`, components[key]);
     });
 
-    const $Vue = Vue;
-
-    $Vue.prototype.$Prefix = {
-        class: options.prefixClass,
-        icon: options.prefixIcon
-    };
+    // TODO 允许用户自定义 class 前缀、icon 前缀
+    // const $Vue = Vue;
+    //
+    // $Vue.prototype.$Prefix = {
+    //     class: options.prefixClass,
+    //     icon: options.prefixIcon
+    // };
 };
 
 export default {

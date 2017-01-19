@@ -1,8 +1,19 @@
 <template>
 <div id="app">
     <img src="./assets/logo.png">
-    <div>
-        <vue-button content="123" :type="'success'" :loading="true" :iconRight="'bath'" :disabled="true" @click.native="action($event)"></vue-button>
+    <div class="">
+        <vue-button-group>
+            <vue-button content="123" :type="'success'" :iconRight="'bath'" @click.native="action($event)"></vue-button>
+            <vue-button content="123" :type="'success'" :iconRight="'bath'" @click.native="action($event)"></vue-button>
+            <vue-button content="123" :type="'success'" :iconRight="'bath'" @click.native="action($event)"></vue-button>
+            <vue-button content="123" :type="'success'" :iconRight="'bath'" @click.native="action($event)"></vue-button>
+        </vue-button-group>
+        <div class="base-btn--group">
+            <vue-button content="123" :type="'success'" :iconRight="'bath'" @click.native="action($event)"></vue-button>
+            <vue-button content="123" :type="'success'" :iconRight="'bath'" @click.native="action($event)"></vue-button>
+            <vue-button content="123" :type="'success'" :iconRight="'bath'" @click.native="action($event)"></vue-button>
+            <vue-button content="123" :type="'success'" :iconRight="'bath'" @click.native="action($event)"></vue-button>
+        </div>
     </div>
 </div>
 </template>
@@ -30,7 +41,6 @@ export default {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
     color: #2c3e50;
     margin-top: 60px;
 }
