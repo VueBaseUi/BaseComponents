@@ -6,7 +6,7 @@ import Vue from 'vue';
 /*eslint-enable*/
 
 import App from './App';
-import BaseComponents from '../index'; // 插件源文件目录
+import BaseComponents from '../components/index'; // 插件源文件目录
 
 // import BaseComponents from '../../dist/index';
 // import '../../dist/css/index.css';
