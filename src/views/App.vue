@@ -2,20 +2,24 @@
 <div id="app">
     <img src="./assets/logo.png">
     <div>
-        <vue-button :loading="true" :disabled="true" data-role="btn" :type="'success'" native="reset" @click.native="action($event)">123</vue-button>
+        <vue-button content="123" :type="'success'" :loading="true" :iconRight="'bath'" :disabled="true" @click.native="action($event)"></vue-button>
     </div>
 </div>
 </template>
 
 <script>
+/*eslint-disable*/
+import 'font-awesome/css/font-awesome.css';
+/*eslint-enable*/
+
 export default {
     name: 'app',
     data() {
         return {};
     },
     methods: {
-        action(e) {
-            console.log(e.target);
+        action() {
+            // console.log(e.target);
         }
     }
 };
