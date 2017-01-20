@@ -1,16 +1,14 @@
 <template>
 <button :class="[`${classPR}-btn`, style, state]" :disabled="loading ||disabled" :type="nativeType">
-    <slot>
-        <i :class="[`${iconPR} ${iconPR}-spinner ${iconPR}-spin`]" v-if="loading" data-icon="left"></i>
-        <i :class="[leftIcon]" v-else-if="iconLeft" data-icon="left"></i>
-        <span>{{ content }}</span>
-        <i :class="[rightIcon]" v-if="iconRight && !loading" data-icon="right"></i>
-    </slot>
+    <i :class="[`${iconPR} ${iconPR}-spinner ${iconPR}-spin`]" v-if="loading" data-icon="left"></i>
+    <i :class="[leftIcon]" v-else-if="iconLeft" data-icon="left"></i>
+    <slot></slot>
+    <i :class="[rightIcon]" v-if="iconRight && !loading" data-icon="right"></i>
 </button>
 </template>
 
 <script>
-import options from '../../mixin/options'; // 插件配置项
+import options from '../../mixins/options'; // 插件配置项
 
 export default {
     mixins: [options],
@@ -21,7 +19,6 @@ export default {
         },
         nativeType: String, // TODO 验证 原生 按钮类型
         size: String, // 按钮尺寸
-        content: null, // 按钮显示文本
         iconLeft: String, // 文本左侧 按钮图标样式名
         iconRight: String, // 文本右侧 按钮图标样式名
         disabled: Boolean, // 按钮状态 是否禁用
