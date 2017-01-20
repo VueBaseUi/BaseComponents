@@ -22,6 +22,8 @@ module.exports = {
         // custom
         'indent': ["error", 4],
         "no-underscore-dangle": 1,
+        "arrow-body-style": [2, "as-needed"],
+        "arrow-parens": [2, "as-needed"],
         'comma-dangle': ["error", "never"],
         // don't require .vue extension when importing
         'import/extensions': ['error', 'always', {

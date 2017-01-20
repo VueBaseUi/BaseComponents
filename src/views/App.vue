@@ -2,18 +2,12 @@
 <div id="app">
     <img src="./assets/logo.png">
     <div class="">
-        <vue-button-group>
-            <vue-button content="123" :type="'success'" :iconRight="'bath'" @click.native="action($event)"></vue-button>
-            <vue-button content="123" :type="'success'" :iconRight="'bath'" @click.native="action($event)"></vue-button>
-            <vue-button content="123" :type="'success'" :iconRight="'bath'" @click.native="action($event)"></vue-button>
-            <vue-button content="123" :type="'success'" :iconRight="'bath'" @click.native="action($event)"></vue-button>
-        </vue-button-group>
-        <div class="base-btn--group">
-            <vue-button content="123" :type="'success'" :iconRight="'bath'" @click.native="action($event)"></vue-button>
-            <vue-button content="123" :type="'success'" :iconRight="'bath'" @click.native="action($event)"></vue-button>
-            <vue-button content="123" :type="'success'" :iconRight="'bath'" @click.native="action($event)"></vue-button>
-            <vue-button content="123" :type="'success'" :iconRight="'bath'" @click.native="action($event)"></vue-button>
-        </div>
+        <vue-dropdown @commond='action'>
+            <vue-button slot="content">button</vue-button>
+            <vue-dropdown-item :val="1">123</vue-dropdown-item>
+            <vue-dropdown-item :val="2">123</vue-dropdown-item>
+            <vue-dropdown-item :val="3" :disabled="true"><a><span>321</span></a></vue-dropdown-item>
+        </vue-dropdown>
     </div>
 </div>
 </template>
@@ -29,8 +23,8 @@ export default {
         return {};
     },
     methods: {
-        action() {
-            // console.log(e.target);
+        action(e) {
+            return e;
         }
     }
 };

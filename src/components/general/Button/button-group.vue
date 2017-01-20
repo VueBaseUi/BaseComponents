@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import options from '../../mixin/options'; // 插件配置项
+import options from '../../mixins/options'; // 插件配置项
 
 export default {
     mixins: [options]
