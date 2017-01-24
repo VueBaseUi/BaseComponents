@@ -4,9 +4,9 @@
     <div class="">
         <vue-dropdown @commond='action'>
             <vue-button slot="content">button</vue-button>
-            <vue-dropdown-item :val="1">123</vue-dropdown-item>
-            <vue-dropdown-item :val="2">123</vue-dropdown-item>
-            <vue-dropdown-item :val="3" :disabled="true"><a><span>321</span></a></vue-dropdown-item>
+            <vue-dropdown-item :val="1"><a href="#1">12</a></vue-dropdown-item>
+            <vue-dropdown-item :val="2"><a href="#2">1</a></vue-dropdown-item>
+            <vue-dropdown-item :val="3" :disabled="true"><a href="#3"><span>3213</span></a></vue-dropdown-item>
         </vue-dropdown>
     </div>
 </div>

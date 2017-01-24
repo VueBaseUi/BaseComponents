@@ -1,7 +1,7 @@
 <template>
 <div :class="`${classPR}-dropdown`" @mouseenter="mouseStateMenu(false)" @mouseleave="mouseStateMenu(true)">
     <slot name="content">此处放置 触发元素，eg: button</slot>
-    <ul :class="`${classPR}-dropdown--menu`" v-if="visible" @mouseleave="hide()" @click="menuItemClick($event)">
+    <ul :class="`${classPR}-dropdown--menu`" v-show="visible" @mouseleave="hide()" @click="menuItemClick($event)">
         <slot></slot>
     </ul>
 </div>
@@ -58,7 +58,7 @@ export default {
             if (this.trigger === 'hover') {
                 $trigger.addEventListener('mouseenter', this.show);
                 $trigger.addEventListener('mouseleave', this.hide);
-            } else {
+            } else if (this.trigger === 'click') {
                 $trigger.addEventListener('click', this.show);
                 $trigger.addEventListener('mouseleave', this.hide);
             }

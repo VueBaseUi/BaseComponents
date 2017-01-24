@@ -3,3 +3,7 @@
 @import "./button/_index.scss";
 //
 @import "./dropdown/_index.scss";
+
+* {
+    box-sizing: border-box;
+}
