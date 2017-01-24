@@ -81,9 +81,8 @@ export default {
             // el.dataset.disabled      <dom data-disabled="">
             if (!el.dataset.disabled) {
                 this.$emit('commond', el.dataset.val, el); // 抛出事件
+                this.switchMenu();
             }
-
-            this.switchMenu();
         }
     },
     mounted() {
