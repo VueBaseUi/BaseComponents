@@ -16,7 +16,7 @@
     text-align: center;
     white-space: nowrap;
 
-    border: 1px solid transparent;
+    border: 1px solid #999;
     border-radius: 8px;
     background-image: none;
 
@@ -54,12 +54,12 @@
 .#{$name}--group {
     display: inline-flex;
 
-    .#{$name}:not(:first-child) {
+    > .#{$name}:not(:first-child) {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
     }
 
-    .#{$name}:not(:last-child) {
+    > .#{$name}:not(:last-child) {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
     }
